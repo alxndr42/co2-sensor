@@ -1,0 +1,6 @@
+# Folders
+.esphome/
+tmp/
+
+# Files
+secrets.yaml
