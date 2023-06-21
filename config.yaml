@@ -1,5 +1,8 @@
-esphome:
+substitutions:
   name: co2sensor
+
+esphome:
+  name: $name
 
 esp8266:
   board: d1_mini
@@ -17,14 +20,16 @@ web_server:
   ota: false
   local: true
 
+prometheus:
+
 i2c:
 
 sensor:
   - platform: scd4x
     co2:
-      name: "CO2"
+      name: CO2
     temperature:
-      name: "Temperature"
+      name: Temperature
     humidity:
-      name: "Humidity"
+      name: Humidity
     measurement_mode: low_power_periodic
