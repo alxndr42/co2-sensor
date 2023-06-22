@@ -33,4 +33,10 @@ esphome run config.yaml --no-logs
 esphome -s name co2sensor42 run config.yaml --no-logs
 ```
 
-After connecting to your Wifi network, the ESPHome web interface should be available at http://co2sensor (or your custom device name). Prometheus metrics should be available at http://co2sensor/metrics.
+After connecting to your Wifi network, the ESPHome web interface should be available at http://co2sensor (or your custom device name).
+
+## Monitoring
+
+Prometheus metrics should be available at http://co2sensor/metrics (or your custom device name).
+
+The folder `grafana` contains example Grafana dashboards, compatible with the included `config.yaml`.
