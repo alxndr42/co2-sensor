@@ -1,5 +1,6 @@
 substitutions:
   name: co2sensor
+  frc: enabled
 
 esphome:
   name: $name
@@ -33,3 +34,27 @@ sensor:
     humidity:
       name: Humidity
     measurement_mode: low_power_periodic
+    id: my_scd4x
+
+button:
+  - platform: template
+    name: FRC
+    on_press:
+      - if:
+          condition:
+            lambda: 'return strcmp("$frc", "enabled") == 0;'
+          then:
+            - scd4x.perform_forced_calibration:
+                value: !lambda 'return id(frc_reference).state;'
+                id: my_scd4x
+          else:
+            - logger.log: 'FRC is disabled.'
+
+number:
+  - platform: template
+    name: FRC Reference
+    min_value: 400
+    max_value: 800
+    step: 1
+    optimistic: true
+    id: frc_reference

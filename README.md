@@ -7,7 +7,7 @@ Low-cost CO2 sensor experiment, based on [ESPHome](https://esphome.io/).
 The included `config.yaml` uses the following components:
 
 - Wemos [D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html) development board (or clone).
-- Sensirion [SCD40](https://developer.sensirion.com/sensirion-products/scd4x-co2-sensors/) CO2 sensor module.
+- Sensirion [SCD4x](https://developer.sensirion.com/sensirion-products/scd4x-co2-sensors/) CO2 sensor module.
 
 ## Assembly
 
@@ -34,6 +34,18 @@ esphome -s name co2sensor42 run config.yaml --no-logs
 ```
 
 After connecting to your Wifi network, the ESPHome web interface should be available at http://co2sensor (or your custom device name).
+
+## Sensor Calibration
+
+By default, the SCD4x performs `Automatic Self-Calibration` (ASC), and does not need to be calibrated manually. However, the data sheet contains this note:
+
+> The automatic self-calibration algorithm assumes that the sensor is exposed to the atmospheric CO2 concentration of 400 ppm at least once per week.
+
+If sufficient ventilation cannot be ensured, it might become necessary to perform `Forced Recalibration` (FRC) using a reference value. The ESPHome web interface contains an `FRC` button for performing the calibration, and an `FRC Reference` slider for setting the reference value. Before calibration, the data sheet suggests:
+
+> Operate the SCD4x in the operation mode later used in normal sensor operation (periodic measurement, low power periodic measurement or single shot) for > 3 minutes in an environment with homogenous and constant CO2 concentration.
+
+The FRC functionality can be disabled by setting the variable `frc` to `disabled`.
 
 ## Monitoring
 
