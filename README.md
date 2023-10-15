@@ -1,13 +1,21 @@
 # co2-sensor
 
-Low-cost CO2 sensor experiment, based on [ESPHome](https://esphome.io/).
+Low-cost headless CO2 sensor, based on [ESPHome](https://esphome.io/).
+
+![Photo of a D1 mini and SCD40 sensor board in a 3D-printed case](build.jpg)
 
 ## Components
 
 The included `config.yaml` uses the following components:
 
-- Wemos [D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html) development board (or clone).
-- Sensirion [SCD4x](https://developer.sensirion.com/sensirion-products/scd4x-co2-sensors/) CO2 sensor module.
+- Wemos [D1 mini][] development board (or clone).
+- Sensirion [SCD4x][] CO2 sensor module.
+
+The `case` folder contains STL files and their [OpenSCAD][] sources for a simple 3D-printed case.
+
+[d1 mini]: https://www.wemos.cc/en/latest/d1/d1_mini.html
+[openscad]: https://openscad.org/
+[scd4x]: https://developer.sensirion.com/sensirion-products/scd4x-co2-sensors/
 
 ## Assembly
 
@@ -20,12 +28,14 @@ Connect the development board and CO2 sensor module as follows:
 | SCL | SCL |
 | SDA | SDA |
 
-Connect the development board to your computer via USB for the initial firmware installation.
+For the 3D-printed case, short M2 screws (~3mm) should work.
 
 ## Firmware Installation
 
+Connect the development board to your computer via USB for the initial firmware installation.
+
 ```bash
-# Create secrets.yaml (and customize)
+# Create (then customize) secrets.yaml
 cp secrets-example.yaml secrets.yaml
 # Install firmware with standard configuration
 esphome run config.yaml --no-logs
@@ -34,6 +44,12 @@ esphome -s name co2sensor42 run config.yaml --no-logs
 ```
 
 After connecting to your Wifi network, the ESPHome web interface should be available at http://co2sensor (or your custom device name).
+
+## Monitoring
+
+Prometheus metrics should be available at http://co2sensor/metrics (or your custom device name).
+
+The folder `grafana` contains example Grafana dashboards, compatible with the included `config.yaml`.
 
 ## Sensor Calibration
 
@@ -46,9 +62,3 @@ If sufficient ventilation cannot be ensured, it might become necessary to perfor
 > Operate the SCD4x in the operation mode later used in normal sensor operation (periodic measurement, low power periodic measurement or single shot) for > 3 minutes in an environment with homogenous and constant CO2 concentration.
 
 The FRC functionality can be disabled by setting the variable `frc` to `disabled`.
-
-## Monitoring
-
-Prometheus metrics should be available at http://co2sensor/metrics (or your custom device name).
-
-The folder `grafana` contains example Grafana dashboards, compatible with the included `config.yaml`.
