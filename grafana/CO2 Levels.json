@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.0.0"
+      "version": "10.2.2"
     },
     {
       "type": "datasource",
@@ -102,9 +102,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "value_and_name"
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "10.0.0",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -116,7 +117,7 @@
           "expr": "esphome_sensor_value{id=\"co2\"}",
           "format": "time_series",
           "instant": false,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{ instance }}",
           "range": true,
           "refId": "A"
         }
@@ -135,13 +136,15 @@
   ],
   "refresh": "1m",
   "schemaVersion": 38,
-  "style": "dark",
-  "tags": [],
+  "tags": [
+    "esphome",
+    "co2"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -150,6 +153,6 @@
   "timezone": "",
   "title": "CO2 Levels",
   "uid": "c2af0bf5-a5c8-4daa-9eb2-03e54d7ecb11",
-  "version": 9,
+  "version": 8,
   "weekStart": ""
 }

@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.0.0"
+      "version": "10.2.2"
     },
     {
       "type": "datasource",
@@ -67,6 +67,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -80,6 +81,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 2,
             "pointSize": 5,
@@ -144,7 +146,7 @@
           "editorMode": "code",
           "expr": "esphome_sensor_value{id=\"co2\"}",
           "instant": false,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{ instance }}",
           "range": true,
           "refId": "A"
         }
@@ -173,6 +175,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -186,6 +189,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 2,
             "pointSize": 5,
@@ -250,7 +254,7 @@
           "editorMode": "code",
           "expr": "esphome_sensor_value{id=\"temperature\"}",
           "instant": false,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{ instance }}",
           "range": true,
           "refId": "A"
         }
@@ -279,6 +283,7 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
@@ -292,6 +297,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 2,
             "pointSize": 5,
@@ -356,7 +362,7 @@
           "editorMode": "code",
           "expr": "esphome_sensor_value{id=\"humidity\"}",
           "instant": false,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{ instance }}",
           "range": true,
           "refId": "A"
         }
@@ -376,8 +382,10 @@
   ],
   "refresh": "1m",
   "schemaVersion": 38,
-  "style": "dark",
-  "tags": [],
+  "tags": [
+    "esphome",
+    "co2"
+  ],
   "templating": {
     "list": []
   },
@@ -402,6 +410,6 @@
   "timezone": "",
   "title": "CO2 Sensors",
   "uid": "a344a1de-37f2-4b29-a2a1-0bbe437cbcd7",
-  "version": 16,
+  "version": 8,
   "weekStart": ""
 }
