@@ -1,0 +1,14 @@
+{
+    "sensors": [
+        {
+            "name": "Sensor 01",
+            "url": "http://co2sensor01/metrics"
+        },
+        {
+            "name": "Sensor 02",
+            "url": "http://co2sensor02/metrics"
+        }
+    ],
+    "limits": [800, 1000],
+    "refresh": 60
+}

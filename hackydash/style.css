@@ -1,0 +1,47 @@
+body {
+    color: #fff;
+    background: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
+}
+
+#sensors {
+    display: flex;
+    flex-flow: wrap;
+    height: 100vh;
+}
+
+.sensor {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex: 1 0 10ex;
+    background-color: #808080;
+    font-size: xxx-large;
+    text-align: center;
+    line-height: 120%;
+    margin: 2px;
+    border-radius: 6px;
+    padding: 1ex;
+}
+
+.sensor.green {
+    background-color: #228b22;
+}
+
+.sensor.yellow {
+    color: #000;
+    background-color: #fade2a;
+}
+
+.sensor.red {
+    background-color: #f00;
+}
+
+.sensor.template {
+    display: none;
+}
+
+.level {
+    font-size: 90%;
+}

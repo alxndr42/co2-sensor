@@ -11,7 +11,7 @@ The included `config.yaml` uses the following components:
 - Wemos [D1 mini][] development board (or clone).
 - Sensirion [SCD4x][] CO2 sensor module.
 
-The `case` folder contains STL files and their [OpenSCAD][] sources for a simple 3D-printed case.
+The [case](case) folder contains STL files and their [OpenSCAD][] sources for a simple 3D-printed case.
 
 [d1 mini]: https://www.wemos.cc/en/latest/d1/d1_mini.html
 [openscad]: https://openscad.org/
@@ -49,7 +49,9 @@ After connecting to your Wifi network, the ESPHome web interface should be avail
 
 Prometheus metrics should be available at http://co2sensor/metrics (or your custom device name).
 
-The folder `grafana` contains example Grafana dashboards, compatible with the included `config.yaml`.
+The [grafana](grafana) folder contains example Grafana dashboards.
+
+The [hackydash](hackydash) folder contains a simple HTML dashboard.
 
 ## Sensor Calibration
 

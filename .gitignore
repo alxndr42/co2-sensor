@@ -3,4 +3,6 @@
 tmp/
 
 # Files
+hackydash/config.json
+hackydash/custom.css
 secrets.yaml
