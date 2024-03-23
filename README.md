@@ -2,14 +2,16 @@
 
 Low-cost headless CO2 sensor, based on [ESPHome](https://esphome.io/).
 
-![Photo of a D1 mini and SCD40 sensor board in a 3D-printed case](build.jpg)
+![Photo of an assembled CO2 sensor with the lid removed, powered by USB-C cable](build.jpg)
 
 ## Components
 
 The included `config.yaml` uses the following components:
 
-- Wemos [D1 mini][] development board (or clone).
-- Sensirion [SCD4x][] CO2 sensor module.
+- Wemos [D1 mini][] board (or clone). (Cost: ca. 2 EUR)
+- Sensirion [SCD4x][] CO2 sensor module. (Cost: ca. 15 EUR)
+
+Connecting the boards will require some soldering, and the type of wire you would like to use.
 
 The [case](case) folder contains STL files and their [OpenSCAD][] sources for a simple 3D-printed case.
 
@@ -19,20 +21,22 @@ The [case](case) folder contains STL files and their [OpenSCAD][] sources for a 
 
 ## Assembly
 
-Connect the development board and CO2 sensor module as follows:
+Connect the D1 Mini board and CO2 sensor module as follows:
 
-| Development Board Pin | CO2 Sensor Pin |
+| D1 Mini Pin | CO2 Sensor Pin |
 | --- | --- |
 | GND | GND |
 | 3V3 | VDD |
 | SCL | SCL |
 | SDA | SDA |
 
-For the 3D-printed case, short M2 screws (~3mm) should work.
+![Photo of both boards mounted in a 3D-printed case](assembly.jpg)
+
+Short M2 screws (~3 mm) should work for the D1 mini board. The sensor module can simply be pushed into its holder.
 
 ## Firmware Installation
 
-Connect the development board to your computer via USB for the initial firmware installation.
+Connect the D1 Mini board to your computer via USB for the initial firmware installation.
 
 ```bash
 # Create (then customize) secrets.yaml
