@@ -4,6 +4,10 @@ Low-cost headless CO2 sensor, based on [ESPHome](https://esphome.io/).
 
 ![Photo of an assembled CO2 sensor with the lid removed, powered by USB-C cable](build.jpg)
 
+Grafana and HTML dashboards included.
+
+![Screenshots of Grafana and HTML dashboards](dashboards.png)
+
 ## Components
 
 The included `config.yaml` uses the following components:
