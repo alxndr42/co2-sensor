@@ -10,7 +10,7 @@ Grafana and HTML dashboards included.
 
 ## Components
 
-The included `config.yaml` uses the following components:
+The included [config.yaml](config.yaml) uses the following components:
 
 - Wemos [D1 mini][] board (or clone). (Cost: ca. 2 EUR)
 - Sensirion [SCD4x][] CO2 sensor module. (Cost: ca. 15 EUR)
