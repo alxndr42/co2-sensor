@@ -6,6 +6,7 @@ const HUM_RE = /^esphome_sensor_value\{.*id="humidity".*unit="(.+)".*\} ([\d.]+)
 
 var sensors = [];
 var limits = [];
+var temhum = true;
 var refreshDelay = 0;
 
 function initialize () {
@@ -17,6 +18,7 @@ function initialize () {
 
         sensors = config.sensors;
         limits = config.limits;
+        temhum = config.temhum;
         refreshDelay = config.refresh * 1000;
 
         createDashboard();
@@ -30,12 +32,16 @@ function initialize () {
 }
 
 function createDashboard () {
-    var container = document.getElementById('sensors');
-    var template = container.getElementsByClassName('template')[0];
+    const container = document.getElementById('sensors');
+    const template = container.querySelector('.template');
+
+    if (!temhum) {
+        template.querySelector('.temhum').classList.add('hidden');
+    }
 
     sensors.forEach(function (sensor) {
-        var element = template.cloneNode(true);
-        var name = element.getElementsByClassName('name')[0];
+        const element = template.cloneNode(true);
+        const name = element.querySelector('.name');
 
         sensor.element = element;
         name.textContent = sensor.name;
@@ -78,6 +84,8 @@ function updateSensor (sensor) {
     xhr.onerror = function () {
         sensorElement.classList.remove('green', 'yellow', 'red');
         co2Element.textContent = '---';
+        temElement.textContent = '---';
+        humElement.textContent = '---';
     };
     xhr.send();
 }

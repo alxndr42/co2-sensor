@@ -49,3 +49,7 @@ body {
 .temhum {
     font-size: 50%;
 }
+
+.temhum.hidden {
+    display: none;
+}
