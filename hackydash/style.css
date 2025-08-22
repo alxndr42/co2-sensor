@@ -42,6 +42,10 @@ body {
     display: none;
 }
 
-.level {
+.name {
     font-size: 90%;
+}
+
+.temhum {
+    font-size: 50%;
 }
