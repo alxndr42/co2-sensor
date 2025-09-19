@@ -72,3 +72,7 @@ If sufficient ventilation cannot be ensured, it might become necessary to perfor
 > Operate the SCD4x in the operation mode later used in normal sensor operation (periodic measurement, low power periodic measurement or single shot) for > 3 minutes in an environment with homogenous and constant CO2 concentration.
 
 The FRC functionality can be disabled by setting the variable `frc` to `disabled`.
+
+---
+
+Trans Rights are Human Rights! 🏳️‍⚧️ 🏳️‍🌈
